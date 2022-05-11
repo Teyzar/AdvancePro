@@ -19,7 +19,8 @@ class User {
 
     final headers = <String, String>{
       HttpHeaders.contentTypeHeader: ContentType.json.toString(),
-      HttpHeaders.acceptHeader: ContentType.json.toString()
+      HttpHeaders.acceptHeader: ContentType.json.toString(),
+      HttpHeaders.allowHeader: "*"
     };
     final response = await http.post(url,
         headers: headers,
@@ -41,7 +42,8 @@ class User {
 
     final headers = <String, String>{
       HttpHeaders.contentTypeHeader: ContentType.json.toString(),
-      HttpHeaders.acceptHeader: ContentType.json.toString()
+      HttpHeaders.acceptHeader: ContentType.json.toString(),
+      HttpHeaders.allowHeader: "*"
     };
     final response = await http.post(
       url,
@@ -55,12 +57,29 @@ class User {
       email = data['email'];
       name = data['name'];
       token = data['token'];
+      Fluttertoast.showToast(
+        msg: 'Login Success!',
+        toastLength: Toast.LENGTH_LONG,
+      );
     } else {
       Fluttertoast.showToast(
         msg: data['error'] ?? 'Failed to login',
         toastLength: Toast.LENGTH_LONG,
       );
     }
+    return response.statusCode;
+  }
+
+  Future<int> logout(String _token) async {
+    final url = Uri.https(domain, "/users/logout/");
+
+    final headers = <String, String>{
+      HttpHeaders.authorizationHeader: "Bearer $_token"
+    };
+    final response = await http.post(
+      url,
+      headers: headers,
+    );
     return response.statusCode;
   }
 }
