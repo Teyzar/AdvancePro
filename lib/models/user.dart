@@ -20,7 +20,6 @@ class User {
     final headers = <String, String>{
       HttpHeaders.contentTypeHeader: ContentType.json.toString(),
       HttpHeaders.acceptHeader: ContentType.json.toString(),
-      HttpHeaders.allowHeader: "*"
     };
     final response = await http.post(url,
         headers: headers,
@@ -43,8 +42,8 @@ class User {
     final headers = <String, String>{
       HttpHeaders.contentTypeHeader: ContentType.json.toString(),
       HttpHeaders.acceptHeader: ContentType.json.toString(),
-      HttpHeaders.allowHeader: "*"
     };
+
     final response = await http.post(
       url,
       headers: headers,

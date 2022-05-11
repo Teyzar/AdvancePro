@@ -41,45 +41,61 @@ class _HomeState extends State<Home> {
               ),
               const SizedBox(height: 40),
               const Text("Name",
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 77, 72, 72))),
               const SizedBox(height: 10),
               Card(
                 color: Colors.lightBlue[50],
                 elevation: 4,
                 child: Container(
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(15),
                     child: Text(
                       widget.user.name.toString(),
                       style: const TextStyle(fontSize: 15),
                     )),
               ),
               const SizedBox(height: 15),
-              const Text("Email",
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+              const Text(
+                "Email",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 77, 72, 72),
+                ),
+              ),
               const SizedBox(height: 10),
               Card(
                 color: Colors.lightBlue[50],
                 elevation: 4,
                 child: Container(
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(15),
                     child: Text(
                       widget.user.email.toString(),
                       style: const TextStyle(fontSize: 15),
                     )),
               ),
               const SizedBox(height: 15),
-              const Text("Token",
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+              const Text(
+                "Token",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 77, 72, 72),
+                ),
+              ),
               const SizedBox(height: 10),
               Card(
                 color: Colors.lightBlue[50],
                 elevation: 4,
                 child: Container(
-                    padding: const EdgeInsets.all(5),
-                    child: Text(
-                      widget.user.token.toString(),
-                      style: const TextStyle(fontSize: 15),
-                    )),
+                  padding: const EdgeInsets.all(15),
+                  child: Text(
+                    widget.user.token.toString(),
+                    style: const TextStyle(fontSize: 15),
+                  ),
+                ),
               ),
               const SizedBox(height: 50),
               TextButton.icon(
